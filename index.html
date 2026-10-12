@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>happy anniversary bab ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #fff5f2;
+    color: #674653;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(145deg, #f9dce1, #fff1e9, #f6d8df);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+    content: "♡";
+    position: absolute;
+    font-size: 100px;
+    color: rgba(197, 117, 139, 0.15);
+}
+
+.hero::before {
+    top: 10%;
+    left: 8%;
+    transform: rotate(-20deg);
+}
+
+.hero::after {
+    bottom: 10%;
+    right: 8%;
+    transform: rotate(20deg);
+}
+
+.small-text {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b77689;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(55px, 12vw, 95px);
+    line-height: 1;
+    color: #bd7187;
+    font-weight: 600;
+}
+
+.hero p {
+    margin-top: 22px;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 320px;
+}
+
+.heart {
+    color: #cf8498;
+    font-size: 28px;
+    margin-top: 20px;
+    animation: heartbeat 1.4s infinite;
+}
+
+.button {
+    margin-top: 28px;
+    display: inline-block;
+    background: #c77e91;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px #d9a6b366;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: #b76880;
+}
+
+section {
+    padding: 75px 20px;
+}
+
+.section-title {
+    font-family: 'Caveat', cursive;
+    font-size: 43px;
+    color: #bd7187;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 12px;
+    color: #a7848d;
+    margin-bottom: 35px;
+}
+
+.letter-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(25px, 6vw, 55px);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #edc1ca;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px #d8a6b31c;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.letter-card p {
+    margin-bottom: 22px;
+}
+
+.signature {
+    font-family: 'Caveat', cursive;
+    font-size: 29px;
+    color: #bd7187;
+    text-align: right;
+    margin-top: 25px;
+}
+
+.memories {
+    background: #fce9e8;
+}
+
+.memory-grid {
+    max-width: 850px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.memory {
+    background: #fffaf7;
+    border-radius: 16px;
+    padding: 30px 22px;
+    text-align: center;
+    border: 1px solid #f0d0d4;
+    transition: 0.3s;
+}
+
+.memory:hover {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+.memory .emoji {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.memory h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 27px;
+    color: #bd7187;
+    margin-bottom: 10px;
+}
+
+.memory p {
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.surprise {
+    text-align: center;
+    background: #fff8f4;
+}
+
+.surprise-box {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 35px 25px;
+    border: 1px dashed #dba2b0;
+    border-radius: 20px;
+}
+
+#hidden-message {
+    display: none;
+    margin-top: 25px;
+    line-height: 2;
+    font-size: 14px;
+    animation: appear 0.8s ease;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #f5dce0;
+    color: #9d6878;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer span {
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    color: #d68da0;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+    z-index: 5;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+    .hero {
+        min-height: 80vh;
+    }
+
+    .letter-card {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    section {
+        padding: 60px 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="small-text">a little letter for you</div>
+
+    <h1>happy anniversary<br>bab ♡</h1>
+
+    <p>
+        things may be different now<br>
+        but you are still someone special to me<br>
+        and that will always mean something
+    </p>
+
+    <div class="heart">♡</div>
+
+    <a href="#letter" class="button">open your letter ♡</a>
+</header>
+
+<section id="letter">
+    <h2 class="section-title">for my bab</h2>
+    <p class="section-subtitle">
+        written with all the love in my heart
+    </p>
+
+    <div class="letter-card">
+        <p>happy anniversary babbbb. ♡</p>
+
+        <p>
+        happy anniversary to us bab. even though things are
+        different now and we are no longer officially together
+        i still wanted to greet you because this day will always
+        be special to me. honestly i do not even know how to
+        explain what we are right now but one thing i am sure
+        of is that you still mean so much to me. we may not have
+        the same label anymore but we still talk every day and
+        we still share little moments that make me happy. i am
+        really thankful that despite everything we are still
+        here for each other.
+        </p>
+
+        <p>
+        i know things did not go the way we wanted them to and
+        i know we had to make a decision that neither of us
+        really wanted. it was not easy for me to accept everything
+        because if i could choose without worrying about anything
+        i would still choose you. i would still choose to spend
+        my days with you to listen to your stories to know how
+        your day went and to be the person you can run to
+        whenever things get hard. because even after everything
+        that happened my feelings for you never suddenly
+        disappeared.
+        </p>
+
+        <p>
+        thank you for all the memories we have made bab.
+        thank you for making me feel loved and for being someone
+        who became part of my everyday life. thank you for all
+        the random conversations the little updates the kulit
+        moments and even the simple things that probably seem
+        normal to us but actually mean so much to me. you do
+        not know how happy i get whenever i get to talk to you
+        and how much those little moments still mean to me.
+        </p>
+
+        <p>
+        i know we are not in the easiest situation right now
+        and sometimes it hurts knowing that we love each other
+        but we cannot have things the way we want them to be.
+        but i hope you know that i am still grateful for you
+        and for the love we shared and continue to show each
+        other in our own little ways. i do not want you to ever
+        think that what we had meant any less to me just because
+        things changed between us. you will always be someone
+        i genuinely loved with all my heart.
+        </p>
+
+        <p>
+        happy anniversary again bab. i hope you know that you
+        are still special to me in ways i cannot fully explain.
+        i still care about you and your happiness and i still
+        want to know about your day and the little things
+        happening in your life. i still want to hear your
+        stories and laugh with you over the most random things.
+        and even if i do not know what will happen to us in
+        the future i know that i am thankful for every moment
+        i still get to spend with you.
+        </p>
+
+        <p>
+        i love you bab and i hope you never doubt that. thank
+        you for staying and for still letting me be part of your
+        life. whatever happens i hope we continue to treat each
+        other with love patience and understanding. happy
+        anniversary to us bab. i miss the way things used to be
+        sometimes but i am also thankful for what we still have
+        now. please take care of yourself always okay. i love
+        you so much babbbb.
+        </p>
+
+        <div class="signature">
+            always with love,<br>
+            jay ♡
+        </div>
+    </div>
+</section>
+
+<section class="memories" id="memories">
+    <h2 class="section-title">little things i treasure</h2>
+    <p class="section-subtitle">
+        some things will always be special
+    </p>
+
+    <div class="memory-grid">
+        <div class="memory">
+            <div class="emoji">💌</div>
+            <h3>our conversations</h3>
+            <p>
+                every random story and every little update
+                still makes my day better.
+            </p>
+        </div>
+
+        <div class="memory">
+            <div class="emoji">🧸</div>
+            <h3>your love</h3>
+            <p>
+                thank you for making me feel special in
+                ways you might not even notice.
+            </p>
+        </div>
+
+        <div class="memory">
+            <div class="emoji">🌷</div>
+            <h3>our memories</h3>
+            <p>
+                no matter how things change i will always
+                be thankful that we met.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="surprise">
+    <h2 class="section-title">one last little thing</h2>
+    <p class="section-subtitle">
+        there is something i want you to know
+    </p>
+
+    <div class="surprise-box">
+        <div style="font-size: 35px;">🎀</div>
+
+        <p style="margin-top: 15px; font-size: 14px;">
+            bab i have a little message for you
+        </p>
+
+        <button class="button" onclick="revealMessage()">
+            tap here bab ♡
+        </button>
+
+        <div id="hidden-message">
+            <p>
+                if i could go back and do it all again
+                i would still be happy to meet you and
+                fall in love with you.
+            </p>
+
+            <p>
+                thank you for being part of my life.
+                thank you for still being here.
+                whatever the future holds i hope you
+                never forget how much you mean to me.
+            </p>
+
+            <p>
+                happy anniversary babbbb.
+                i love you always. ♡
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    made with love by jay
+    <span>for my bab elai ♡</span>
+    no matter what we are you will always be special to me.
+</footer>
+
+<script>
+function revealMessage() {
+    const message = document.getElementById('hidden-message');
+
+    if (message.style.display === 'block') {
+        message.style.display = 'none';
+    } else {
+        message.style.display = 'block';
+        makeHearts();
+    }
+}
+
+function makeHearts() {
+    for (let i = 0; i < 18; i++) {
+        setTimeout(() => {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.textContent = ['♡', '♥', 'ღ'][Math.floor(Math.random() * 3)];
+
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+            heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6000);
+        }, i * 120);
+    }
+}
+</script>
+
+</body>
+</html>
